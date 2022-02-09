@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Conversor de Moedas</string>
     <string name="converter">Converter</string>
+    <string name="hint_to">Para</string>
+    <string name="hint_from">Converter de</string>
+    <string name="menu_history">Histórico</string>
+    <string name="save">Salvar</string>
 </resources>
