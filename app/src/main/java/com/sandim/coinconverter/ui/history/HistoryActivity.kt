@@ -1,6 +1,7 @@
 package com.sandim.coinconverter.ui.history
 
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.sandim.coinconverter.R
@@ -27,12 +28,21 @@ class HistoryActivity : AppCompatActivity() {
             DividerItemDecoration(this, DividerItemDecoration.HORIZONTAL)
         )
 
-        setSupportActionBar(binding.toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
 
         bindObserve()
 
         lifecycle.addObserver(viewModel)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        when(item.itemId) {
+            android.R.id.home -> finish()
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 
     private fun bindObserve() {
